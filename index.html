@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="uz" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Turdiqulova Maftuna | Shaxsiy Mobil Portfolio</title>
+  
+  <!-- Mobile Web App Meta -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Maftuna Portfolio">
+  <meta name="theme-color" content="#0b0f19">
+  <meta name="description" content="Turdiqulova Maftuna Laziz qizi - JDPU Tarix fakulteti 3-bosqich talabasi, 'Amir Temur va Temuriylar davri yozma manbalari' qo'llanmasi muallifi, Mental Arifmetika ustozi, xalqaro olimpiadalar sovrindori.">
+
+  <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Ambient Lights -->
+  <div class="ambient-glow glow-top" aria-hidden="true"></div>
+  <div class="ambient-glow glow-bottom" aria-hidden="true"></div>
+
+  <!-- Desktop Device Controller (Visible only on desktop/tablet screens) -->
+  <aside class="desktop-toolbar" id="desktopToolbar" aria-label="Desktop ko'rish paneli">
+    <div class="toolbar-brand">
+      <span class="pulse-dot"></span>
+      <span class="brand-text"><strong>Maftuna Portfolio</strong> • Mobil Rejim</span>
+    </div>
+    <div class="toolbar-actions">
+      <button class="tool-btn active" id="btnPhoneView" title="Mobil ramka ko'rinishi">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="3" ry="3"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+        <span>Telefon ramkasi</span>
+      </button>
+      <button class="tool-btn" id="btnFullView" title="Kengaytirilgan to'liq ekran">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
+        <span>Moslashuvchan ekran</span>
+      </button>
+      <button class="tool-btn" id="btnThemeToggle" title="Mavzuni almashtirish">
+        <span class="theme-icon">🌓</span>
+        <span class="theme-label">Tungi rejim</span>
+      </button>
+      <button class="tool-btn" id="btnQuickQR" title="Telefonda ochish uchun QR kod">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+        <span>QR Kod</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Mobile Device Outer Container -->
+  <div class="device-frame" id="deviceFrame">
+    <!-- Smartphone Bezel & Hardware Elements -->
+    <div class="hardware-speaker" aria-hidden="true"></div>
+    <div class="hardware-button hw-power" aria-hidden="true"></div>
+    <div class="hardware-button hw-vol-up" aria-hidden="true"></div>
+    <div class="hardware-button hw-vol-down" aria-hidden="true"></div>
+
+    <!-- Phone Screen Viewport -->
+    <main class="mobile-screen" id="mobileScreen">
+
+      <!-- iOS Status Bar & Dynamic Island -->
+      <header class="status-bar" id="statusBar">
+        <div class="status-time" id="statusClock">09:41</div>
+        <div class="dynamic-island" id="dynamicIsland">
+          <div class="island-content">
+            <span class="island-badge">🏆</span>
+            <span class="island-text">Maftuna Turdiqulova</span>
+          </div>
+        </div>
+        <div class="status-indicators">
+          <svg class="icon-signal" width="16" height="12" viewBox="0 0 20 16" fill="currentColor">
+            <rect x="0" y="10" width="3" height="6" rx="1"></rect>
+            <rect x="5" y="7" width="3" height="9" rx="1"></rect>
+            <rect x="10" y="4" width="3" height="12" rx="1"></rect>
+            <rect x="15" y="1" width="3" height="15" rx="1"></rect>
+          </svg>
+          <span class="status-5g">5G</span>
+          <div class="battery-icon">
+            <div class="battery-level" style="width: 88%;"></div>
+          </div>
+        </div>
+      </header>
+
+      <!-- App Header Nav -->
+      <nav class="app-topbar">
+        <div class="app-profile-mini">
+          <div class="status-indicator-dot"></div>
+          <div>
+            <div class="mini-location">📍 Jizzax shahri</div>
+            <div class="mini-availability">Faoliyatda & Hamkorlikka ochiq</div>
+          </div>
+        </div>
+        <div class="app-actions">
+          <button class="icon-circle-btn" id="btnSoundToggle" title="Ovozni yoqish/o'chirish" aria-label="Ovoz sozlamasi">
+            <span id="soundIcon">🔊</span>
+          </button>
+          <button class="icon-circle-btn" id="btnShareApp" title="Portfolioni ulashish" aria-label="Ulashish">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Scrollable Mobile Content Body -->
+      <div class="mobile-content-scroll" id="contentScroll">
+
+        <!-- Stories / Highlights Bar -->
+        <section class="stories-section" aria-label="Hikoyalar va Asosiy ruknlar">
+          <div class="stories-track" id="storiesTrack">
+            <!-- Story 1 -->
+            <button class="story-item unread" data-story="bio" aria-label="Maftuna haqida hikoya">
+              <div class="story-avatar-ring">
+                <img src="assets/profile.png" alt="Maftuna Turdiqulova" class="story-img">
+              </div>
+              <span class="story-name">Biografiya</span>
+            </button>
+            <!-- Story 2 -->
+            <button class="story-item unread" data-story="book" aria-label="Amir Temur kitobi haqida hikoya">
+              <div class="story-avatar-ring highlight-gold">
+                <div class="story-custom-icon">📖</div>
+              </div>
+              <span class="story-name">Qo'llanma</span>
+            </button>
+            <!-- Story 3 -->
+            <button class="story-item unread" data-story="diplomas" aria-label="Xalqaro diplomlar haqida hikoya">
+              <div class="story-avatar-ring highlight-purple">
+                <div class="story-custom-icon">🥇</div>
+              </div>
+              <span class="story-name">Xalqaro</span>
+            </button>
+            <!-- Story 4 -->
+            <button class="story-item unread" data-story="mental" aria-label="Mental arifmetika haqida hikoya">
+              <div class="story-avatar-ring highlight-emerald">
+                <div class="story-custom-icon">🧮</div>
+              </div>
+              <span class="story-name">Mental Arif.</span>
+            </button>
+            <!-- Story 5 -->
+            <button class="story-item unread" data-story="english" aria-label="Ingliz tili B2 sertifikati haqida hikoya">
+              <div class="story-avatar-ring highlight-blue">
+                <div class="story-custom-icon">🇬🇧</div>
+              </div>
+              <span class="story-name">English B2</span>
+            </button>
+            <!-- Story 6 -->
+            <button class="story-item unread" data-story="trainer" aria-label="Fidoyi ustoz unvoni haqida hikoya">
+              <div class="story-avatar-ring highlight-amber">
+                <div class="story-custom-icon">🏆</div>
+              </div>
+              <span class="story-name">Ustoz 2026</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- Profile Hero Card -->
+        <section class="profile-hero" id="homeSection">
+          <div class="hero-card-glow"></div>
+          <div class="avatar-wrapper">
+            <div class="avatar-ring-animated">
+              <img src="assets/profile.png" alt="Turdiqulova Maftuna Laziz qizi" class="hero-avatar-img">
+            </div>
+            <div class="badge-verified" title="Tasdiqlangan shaxs">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            </div>
+            <span class="active-badge-pill">🟢 Online</span>
+          </div>
+
+          <div class="hero-info">
+            <h1 class="hero-name">Turdiqulova Maftuna</h1>
+            <p class="hero-patronymic">Laziz qizi</p>
+            <div class="hero-badge-tags">
+              <span class="role-pill pill-gold">Tarixchi-tadqiqotchi</span>
+              <span class="role-pill pill-emerald">Mental Arifmetika Treneri</span>
+              <span class="role-pill pill-blue">Xalqaro B2 Ingliz tili</span>
+            </div>
+            
+            <p class="hero-bio-short">
+              JDPU Tarix fakulteti 3-bosqich talabasi, 2026-yilgi “Amir Temur va Temuriylar davri yozma manbalari” uslubiy qo‘llanmasi muallifi hamda Respublika olimpiadasi “Fidoyi ustoz” mukofoti sohibasi.
+            </p>
+          </div>
+
+          <!-- Quick Statistics Counter Grid -->
+          <div class="stats-counter-grid">
+            <div class="stat-box" data-count="1">
+              <div class="stat-icon-wrap gold-bg">📚</div>
+              <div class="stat-value"><span class="counter-num">1</span> ta</div>
+              <div class="stat-label">Uslubiy qo'llanma</div>
+            </div>
+            <div class="stat-box" data-count="2">
+              <div class="stat-icon-wrap purple-bg">🌍</div>
+              <div class="stat-value"><span class="counter-num">2</span> ta</div>
+              <div class="stat-label">Xalqaro Diplom</div>
+            </div>
+            <div class="stat-box" data-count="2">
+              <div class="stat-icon-wrap emerald-bg">🏆</div>
+              <div class="stat-value"><span class="counter-num">2</span> ta</div>
+              <div class="stat-label">Respublika Unvoni</div>
+            </div>
+            <div class="stat-box" data-count="50">
+              <div class="stat-icon-wrap blue-bg">🧮</div>
+              <div class="stat-value"><span class="counter-num">50</span>+</div>
+              <div class="stat-label">Iqtidorli Shogirdlar</div>
+            </div>
+          </div>
+
+          <!-- Main Hero Actions -->
+          <div class="hero-actions-row">
+            <button class="btn-primary-gradient" id="btnOpenContact">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <span>Bog'lanish</span>
+            </button>
+            <button class="btn-secondary-glass" id="btnOpenCV">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              <span>Rezyume (CV)</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- Category Filter Tabs -->
+        <section class="filter-tabs-wrapper">
+          <div class="filter-tabs-scroll" id="filterTabs">
+            <button class="tab-chip active" data-filter="all">🌟 Barchasi</button>
+            <button class="tab-chip" data-filter="bio">👤 Tarjimayi hol</button>
+            <button class="tab-chip" data-filter="science">📖 Ilmiy meros</button>
+            <button class="tab-chip" data-filter="awards">🏆 Yutuqlar</button>
+            <button class="tab-chip" data-filter="certificates">📜 Sertifikatlar</button>
+            <button class="tab-chip" data-filter="mental">🧮 Mental Arifmetika</button>
+          </div>
+        </section>
+
+        <!-- Dynamic Sections List -->
+        <div class="sections-container" id="sectionsContainer">
+
+          <!-- 1. BIOGRAPHY SECTION -->
+          <article class="content-card filterable-item" data-category="bio" id="cardBio">
+            <div class="card-header">
+              <div class="card-icon gold-glow">👤</div>
+              <div>
+                <h2 class="card-title">Shaxsiy Ma'lumotlar & Tarjimayi hol</h2>
+                <p class="card-subtitle">Asosiy ma'lumotlar va ta'lim bosqichlari</p>
+              </div>
+            </div>
+
+            <div class="bio-details-grid">
+              <div class="bio-row">
+                <span class="bio-label">📅 Tug'ilgan sana:</span>
+                <span class="bio-value">2006-yil 1-iyun</span>
+              </div>
+              <div class="bio-row">
+                <span class="bio-label">📍 Tug'ilgan joyi:</span>
+                <span class="bio-value">Jizzax viloyati, Jizzax shahri</span>
+              </div>
+              <div class="bio-row">
+                <span class="bio-label">🏛️ Oliy ta'lim:</span>
+                <span class="bio-value highlight-text">Jizzax davlat pedagogika universiteti (JDPU)</span>
+              </div>
+              <div class="bio-row">
+                <span class="bio-label">🎓 Fakultet & Bosqich:</span>
+                <span class="bio-value">Tarix fakulteti, 3-bosqich talabasi</span>
+              </div>
+              <div class="bio-row">
+                <span class="bio-label">🌐 Chet tillari:</span>
+                <span class="bio-value badge-pill-inline green">Ingliz tili (B2 Level)</span>
+              </div>
+              <div class="bio-row">
+                <span class="bio-label">💻 Texnologik malaka:</span>
+                <span class="bio-value badge-pill-inline blue">Kompyuter savodxonligi (Teamit)</span>
+              </div>
+            </div>
+
+            <div class="card-quote-box">
+              <p>
+                «Tarixiy yozma manbalarni ilmiy tadqiq etish hamda yosh avlodga mental arifmetika sirlarini o‘rgatish orqali ilm-fan va pedagogika rivojiga o‘z hissamni qo‘shish eng oliy maqsadimdir.»
+              </p>
+              <div class="quote-author">— Turdiqulova Maftuna</div>
+            </div>
+          </article>
+
+          <!-- 2. SCIENTIFIC WORK & MONOGRAPH SECTION -->
+          <article class="content-card filterable-item" data-category="science" id="cardScience">
+            <div class="card-header">
+              <div class="card-icon emerald-glow">📖</div>
+              <div>
+                <h2 class="card-title">Ilmiy Faoliyat & Mualliflik Qo‘llanmasi</h2>
+                <p class="card-subtitle">Nashr etilgan kitob va ilmiy maqolalar</p>
+              </div>
+            </div>
+
+            <!-- 3D Luxury Featured Book Card -->
+            <div class="featured-book-card" id="bookCard">
+              <div class="book-visual-container">
+                <div class="book-3d">
+                  <div class="book-cover">
+                    <div class="book-spine"></div>
+                    <div class="book-front">
+                      <div class="book-ornament-top">✦ ❖ ✦</div>
+                      <div class="book-badge-year">2026-YIL NASHRI</div>
+                      <h3 class="book-title">AMIR TEMUR VA TEMURIYLAR DAVRI YOZMA MANBALARI</h3>
+                      <div class="book-divider"></div>
+                      <p class="book-type">USLUBIY QO‘LLANMA</p>
+                      <div class="book-author">Maftuna Turdiqulova</div>
+                      <div class="book-ornament-bottom">JDPU TARIX FAKULTETI</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="book-meta">
+                <div class="book-tags">
+                  <span class="tag-chip gold">Mualliflik ishi</span>
+                  <span class="tag-chip teal">2026-yil</span>
+                  <span class="tag-chip">Manbashunoslik</span>
+                </div>
+                <h4 class="book-heading">“Amir Temur va Temuriylar davri yozma manbalari”</h4>
+                <p class="book-desc">
+                  Ushbu uslubiy qo‘llanma Temuriylar davri davlatchiligi, harbiy mahorati, madaniyati hamda o‘sha davr xronikalari, farmon va diplomatik yozishmalarini o‘rganishda talaba va tadqiqotchilar uchun muhim manba hisoblanadi.
+                </p>
+                <div class="book-actions">
+                  <button class="btn-outline-gold" id="btnBookDetails">
+                    <span>Qo'llanma haqida to'liq</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Scientific Articles Box -->
+            <div class="articles-subcard">
+              <div class="articles-header">
+                <span class="article-icon">📑</span>
+                <h4>Nufuzli Jurnallardagi Ilmiy Maqolalar</h4>
+              </div>
+              <ul class="articles-list">
+                <li class="article-item">
+                  <span class="article-num">01</span>
+                  <div class="article-body">
+                    <h5>Temuriylar davri manbashunosligining o'ziga xos xususiyatlari</h5>
+                    <p>Oliy ta'lim va ilmiy-tadqiqot jurnallari to'plami, 2025–2026</p>
+                  </div>
+                  <span class="journal-badge">Chop etilgan</span>
+                </li>
+                <li class="article-item">
+                  <span class="article-num">02</span>
+                  <div class="article-body">
+                    <h5>Amir Temur davlati diplomatiyasi va xalqaro yozishmalar tahlili</h5>
+                    <p>Respublika ilmiy-amaliy konferensiya materiallari, 2026</p>
+                  </div>
+                  <span class="journal-badge">Chop etilgan</span>
+                </li>
+                <li class="article-item">
+                  <span class="article-num">03</span>
+                  <div class="article-body">
+                    <h5>Tarix darslarida zamonaviy pedagogik texnologiyalar va manbalar integratsiyasi</h5>
+                    <p>Pedagogik mahorat va innovatsion ta'lim jurnali</p>
+                  </div>
+                  <span class="journal-badge">Chop etilgan</span>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 3. AWARDS & INTERNATIONAL ACHIEVEMENTS SECTION -->
+          <article class="content-card filterable-item" data-category="awards" id="cardAwards">
+            <div class="card-header">
+              <div class="card-icon purple-glow">🏆</div>
+              <div>
+                <h2 class="card-title">Xalqaro & Respublika Mukofotlari</h2>
+                <p class="card-subtitle">Nufuzli xalqaro tanlovlar va olimpiada sovrinlari</p>
+              </div>
+            </div>
+
+            <div class="awards-grid">
+              
+              <!-- Award 1: Spain International Contest -->
+              <div class="award-card highlight-border-spain">
+                <div class="award-top">
+                  <span class="award-flag">🇪🇸 Ispaniya</span>
+                  <span class="award-rank silver">2-Darajali Diplom</span>
+                </div>
+                <h4 class="award-title">“EL AUGE DEL DESARROLLO DE LA CIENCIA Y LA CREATIVIDAD”</h4>
+                <p class="award-issuer">Onlayn miqyosda o‘tkazilgan nufuzli xalqaro tanlov</p>
+                <div class="award-footer">
+                  <span class="award-date">Xalqaro miqyos</span>
+                  <button class="award-view-btn" data-award="spain">Batafsil ➔</button>
+                </div>
+              </div>
+
+              <!-- Award 2: Russia International Contest -->
+              <div class="award-card highlight-border-russia">
+                <div class="award-top">
+                  <span class="award-flag">🇷🇺 Rossiya</span>
+                  <span class="award-rank gold">1-Darajali Diplom</span>
+                </div>
+                <h4 class="award-title">“Корабль Знаний”</h4>
+                <p class="award-issuer">Xalqaro ilmiy-ijodiy va intellektual tanlov g‘olibi</p>
+                <div class="award-footer">
+                  <span class="award-date">Xalqaro g'oliblik</span>
+                  <button class="award-view-btn" data-award="russia">Batafsil ➔</button>
+                </div>
+              </div>
+
+              <!-- Award 3: Republican Olympiad Trainer -->
+              <div class="award-card highlight-border-republic">
+                <div class="award-top">
+                  <span class="award-flag">🇺🇿 O'zbekiston</span>
+                  <span class="award-rank star">Oliy Nominatsiya</span>
+                </div>
+                <h4 class="award-title">“Eng iqtidorli va namunali trener”</h4>
+                <p class="award-issuer">2025–2026-yillar Respublika ochiq olimpiadalari mukofoti</p>
+                <div class="award-footer">
+                  <span class="award-date">2025–2026-yillar</span>
+                  <button class="award-view-btn" data-award="trainer">Batafsil ➔</button>
+                </div>
+              </div>
+
+              <!-- Award 4: Republican Olympiad Teacher -->
+              <div class="award-card highlight-border-republic">
+                <div class="award-top">
+                  <span class="award-flag">🇺🇿 O'zbekiston</span>
+                  <span class="award-rank star">Oliy Nominatsiya</span>
+                </div>
+                <h4 class="award-title">“Eng iqtidorli va fidoyi ustoz”</h4>
+                <p class="award-issuer">Respublika ochiq olimpiadalarida yuksak e'tirof</p>
+                <div class="award-footer">
+                  <span class="award-date">2025–2026-yillar</span>
+                  <button class="award-view-btn" data-award="teacher">Batafsil ➔</button>
+                </div>
+              </div>
+
+            </div>
+          </article>
+
+          <!-- 4. CERTIFICATES & ACADEMIES SECTION -->
+          <article class="content-card filterable-item" data-category="certificates" id="cardCerts">
+            <div class="card-header">
+              <div class="card-icon blue-glow">📜</div>
+              <div>
+                <h2 class="card-title">Malaka va Xalqaro Sertifikatlar</h2>
+                <p class="card-subtitle">Chet tili, akademiya va IT yo‘nalishidagi yutuqlar</p>
+              </div>
+            </div>
+
+            <div class="certs-list">
+              <!-- Cert 1: English B2 -->
+              <div class="cert-card" data-cert="english">
+                <div class="cert-badge-icon blue">🇬🇧</div>
+                <div class="cert-content">
+                  <div class="cert-status-row">
+                    <span class="cert-tag blue">Xalqaro sertifikat</span>
+                    <span class="cert-level">Level B2</span>
+                  </div>
+                  <h4 class="cert-name">Ingliz tili bilish darajasi (CEFR B2)</h4>
+                  <p class="cert-desc">Xalqaro standartlar asosida xorijiy tilni erkin qo‘llash va ilmiy adabiyotlar bilan ishlash ko‘nikmasi.</p>
+                </div>
+                <div class="cert-action-arrow">➔</div>
+              </div>
+
+              <!-- Cert 2: Ziyo Sam Academy -->
+              <div class="cert-card" data-cert="ziyosam">
+                <div class="cert-badge-icon emerald">🧮</div>
+                <div class="cert-content">
+                  <div class="cert-status-row">
+                    <span class="cert-tag emerald">Ziyo Sam Academy</span>
+                    <span class="cert-level">Maxsus Sertifikat</span>
+                  </div>
+                  <h4 class="cert-name">Mental Arifmetika Maxsus Trening Kursi</h4>
+                  <p class="cert-desc">Mental arifmetika metodikasi bo‘yicha professional trenerlik kurslarini muvaffaqiyatli yakunlaganlik sertifikati.</p>
+                </div>
+                <div class="cert-action-arrow">➔</div>
+              </div>
+
+              <!-- Cert 3: Teamit Academy -->
+              <div class="cert-card" data-cert="teamit">
+                <div class="cert-badge-icon purple">💻</div>
+                <div class="cert-content">
+                  <div class="cert-status-row">
+                    <span class="cert-tag purple">Teamit Academy</span>
+                    <span class="cert-level">IT & Savodxonlik</span>
+                  </div>
+                  <h4 class="cert-name">Kompyuter Savodxonligi & Zamonaviy IT</h4>
+                  <p class="cert-desc">Zamonaviy kompyuter dasturlari, ofis texnologiyalari va raqamli ta'lim vositalari bo‘yicha maxsus sertifikat.</p>
+                </div>
+                <div class="cert-action-arrow">➔</div>
+              </div>
+
+              <!-- Cert 4: University Competitions -->
+              <div class="cert-card" data-cert="books">
+                <div class="cert-badge-icon gold">📚</div>
+                <div class="cert-content">
+                  <div class="cert-status-row">
+                    <span class="cert-tag gold">Universitet e'tirofi</span>
+                    <span class="cert-level">Kitobxonlik</span>
+                  </div>
+                  <h4 class="cert-name">Kitobxonlik Musobaqalari & Seminarlar</h4>
+                  <p class="cert-desc">JDPU miqyosida o‘tkazilgan kitobxonlik tanlovlari, ilmiy-amaliy seminarlar faol ishtirokchisi diplomi.</p>
+                </div>
+                <div class="cert-action-arrow">➔</div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 5. MENTAL ARITHMETIC & COACHING SECTION -->
+          <article class="content-card filterable-item" data-category="mental" id="cardMental">
+            <div class="card-header">
+              <div class="card-icon emerald-glow">🧮</div>
+              <div>
+                <h2 class="card-title">Mental Arifmetika & Murabbiylik</h2>
+                <p class="card-subtitle">Ko‘p yillik murabbiylik tajribasi va shogirdlar yutuqlari</p>
+              </div>
+            </div>
+
+            <div class="mental-overview">
+              <p class="mental-text">
+                U bir necha yildan buyon <strong>Mental Arifmetika</strong> yo‘nalishi bo‘yicha samarali faoliyat yuritib kelmoqda. O‘ziga xos interaktiv metodika orqali o‘nlab yosh iqtidorlarni kashf etib, ularning tez fikrlash, xotira va hisoblash ko‘nikmalarini rivojlantirib, olimpiada g‘oliblarini tayyorlab kelmoqda.
+              </p>
+
+              <div class="trainer-badges-row">
+                <div class="t-badge">
+                  <span class="t-badge-val">Ko'p yillik</span>
+                  <span class="t-badge-lbl">Murabbiylik staji</span>
+                </div>
+                <div class="t-badge">
+                  <span class="t-badge-val">50+</span>
+                  <span class="t-badge-lbl">Muvaffaqiyatli shogird</span>
+                </div>
+                <div class="t-badge">
+                  <span class="t-badge-val">100%</span>
+                  <span class="t-badge-lbl">Samarador metodika</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Interactive Mental Math Mini-Game Widget -->
+            <div class="mini-game-box" id="mentalGameBox">
+              <div class="game-header">
+                <span class="game-tag">⚡ Interaktiv Mashq</span>
+                <h4>Tez Hisoblash Sinovi</h4>
+                <p>Maftuna ustozning shogirdlari kabi o‘z tezkor hisoblash mahoratingizni sinab ko‘ring!</p>
+              </div>
+
+              <div class="game-arena">
+                <div class="game-timer" id="gameTimer">Vaqt: <span id="timerVal">10</span>s</div>
+                <div class="math-problem" id="mathProblem">24 + 17 = ?</div>
+                <div class="math-options" id="mathOptions">
+                  <button class="opt-btn" data-val="39">39</button>
+                  <button class="opt-btn" data-val="41">41</button>
+                  <button class="opt-btn" data-val="43">43</button>
+                </div>
+                <div class="game-result-msg" id="gameResultMsg"></div>
+                <button class="btn-start-game" id="btnStartGame">Boshlash / Keyingi misol</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 6. CONTACT & CONNECT SECTION -->
+          <article class="content-card filterable-item" data-category="bio" id="cardContact">
+            <div class="card-header">
+              <div class="card-icon gold-glow">✉️</div>
+              <div>
+                <h2 class="card-title">Bog‘lanish & Takliflar</h2>
+                <p class="card-subtitle">Ilmiy hamkorlik, murabbiylik va tadbirlar uchun</p>
+              </div>
+            </div>
+
+            <div class="contact-channels">
+              <a href="https://t.me/" target="_blank" rel="noopener noreferrer" class="contact-card-link telegram-channel">
+                <div class="ch-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+                </div>
+                <div class="ch-info">
+                  <span class="ch-name">Telegram</span>
+                  <span class="ch-val">@Maftuna_Turdiqulova</span>
+                </div>
+                <span class="ch-arrow">Yozish ➔</span>
+              </a>
+
+              <a href="tel:+998900000000" class="contact-card-link phone-channel">
+                <div class="ch-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                </div>
+                <div class="ch-info">
+                  <span class="ch-name">Telefon qo'ng'iroq</span>
+                  <span class="ch-val">+998 (90) ***-**-**</span>
+                </div>
+                <span class="ch-arrow">Qo'ng'iroq ➔</span>
+              </a>
+
+              <div class="contact-card-link location-channel">
+                <div class="ch-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                </div>
+                <div class="ch-info">
+                  <span class="ch-name">Manzil</span>
+                  <span class="ch-val">O‘zbekiston, Jizzax shahri, JDPU</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick Direct Message Form -->
+            <form class="quick-contact-form" id="quickMsgForm">
+              <h4>Maftunaga to'g'ridan-to'g'ri xabar yuborish</h4>
+              <div class="input-field">
+                <label for="senderName">Ismingiz</label>
+                <input type="text" id="senderName" required placeholder="Masalan: Dilshod Aliyev">
+              </div>
+              <div class="input-field">
+                <label for="senderPhone">Telefon yoki Telegram</label>
+                <input type="text" id="senderPhone" required placeholder="+998 90 123 45 67">
+              </div>
+              <div class="input-field">
+                <label for="senderMsg">Xabaringiz yoki taklifingiz</label>
+                <textarea id="senderMsg" rows="3" required placeholder="Hamkorlik yoki darslar bo'yicha..."></textarea>
+              </div>
+              <button type="submit" class="btn-send-msg">
+                <span>Xabarni jo'natish</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              </button>
+            </form>
+          </article>
+
+        </div>
+
+        <!-- Footer Notice -->
+        <footer class="mobile-footer">
+          <div class="footer-brand">Turdiqulova Maftuna</div>
+          <p class="footer-copy">© 2026 Barcha huquqlar himoyalangan. JDPU Tarix fakulteti.</p>
+          <div class="footer-badge">📱 Smartfonlar va mobil qurilmalar uchun maxsus optimallashtirilgan</div>
+        </footer>
+
+      </div>
+
+      <!-- Native Mobile App Bottom Navigation Bar -->
+      <nav class="mobile-bottom-nav" id="bottomNav" aria-label="Mobil pastki menyu">
+        <button class="nav-item active" data-tab="home" aria-label="Asosiy sahifa">
+          <div class="nav-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          </div>
+          <span class="nav-label">Asosiy</span>
+        </button>
+
+        <button class="nav-item" data-tab="science" aria-label="Ilmiy faoliyat">
+          <div class="nav-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+          </div>
+          <span class="nav-label">Ilmiy ishlar</span>
+        </button>
+
+        <button class="nav-item" data-tab="awards" aria-label="Mukofotlar">
+          <div class="nav-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+          </div>
+          <span class="nav-label">Yutuqlar</span>
+        </button>
+
+        <button class="nav-item" data-tab="mental" aria-label="Mental arifmetika">
+          <div class="nav-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"></rect><line x1="8" y1="6" x2="16" y2="6"></line><line x1="16" y1="14" x2="16" y2="18"></line><path d="M16 10h.01"></path><path d="M12 10h.01"></path><path d="M8 10h.01"></path><path d="M12 14h.01"></path><path d="M8 14h.01"></path><path d="M12 18h.01"></path><path d="M8 18h.01"></path></svg>
+          </div>
+          <span class="nav-label">Trenerlik</span>
+        </button>
+
+        <button class="nav-item" data-tab="contact" aria-label="Bog'lanish">
+          <div class="nav-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          </div>
+          <span class="nav-label">Aloqa</span>
+        </button>
+      </nav>
+
+      <!-- iOS Home Indicator Pill -->
+      <div class="home-indicator" aria-hidden="true"></div>
+
+    </main>
+  </div>
+
+  <!-- ==================== MODALS (<dialog closedby="any">) ==================== -->
+
+  <!-- 1. Fullscreen Stories Modal -->
+  <dialog id="storyDialog" class="modal-dialog story-modal" closedby="any" aria-label="Hikoyalar ko'rish">
+    <div class="story-player" id="storyPlayer">
+      <!-- Story progress bar indicators -->
+      <div class="story-progress-container" id="storyProgressBars"></div>
+      
+      <!-- Story Header -->
+      <div class="story-top-row">
+        <div class="story-user-meta">
+          <img src="assets/profile.png" alt="Maftuna" class="story-user-thumb">
+          <div>
+            <div class="story-user-name">Turdiqulova Maftuna</div>
+            <div class="story-time-stamp" id="storyTimeStamp">Bugun</div>
+          </div>
+        </div>
+        <button class="modal-close-btn" id="btnCloseStory" aria-label="Yopish">✕</button>
+      </div>
+
+      <!-- Story Dynamic Slide Content -->
+      <div class="story-slide-body" id="storySlideBody">
+        <div class="story-emoji-hero" id="storyEmoji">📖</div>
+        <h3 class="story-slide-title" id="storySlideTitle">Amir Temur davri yozma manbalari</h3>
+        <p class="story-slide-desc" id="storySlideDesc">2026-yilda nashr etilgan uslubiy qo‘llanma...</p>
+        <div class="story-slide-tag" id="storySlideTag">Mualliflik ishi</div>
+      </div>
+
+      <!-- Story Tap Navigation overlay -->
+      <div class="story-tap-zone zone-left" id="storyTapLeft" aria-label="Oldingi slayd"></div>
+      <div class="story-tap-zone zone-right" id="storyTapRight" aria-label="Keyingi slayd"></div>
+      
+      <div class="story-bottom-hint">To‘xtatib turish uchun bosing • O‘tkazish uchun chekkasiga teging</div>
+    </div>
+  </dialog>
+
+  <!-- 2. Detailed Item Modal (Diplomas, Book, Certificates) -->
+  <dialog id="detailsDialog" class="modal-dialog sheet-modal" closedby="any" aria-labelledby="detailTitle">
+    <div class="sheet-container">
+      <div class="sheet-drag-handle"></div>
+      <div class="sheet-header">
+        <h3 id="detailTitle" class="sheet-title">Tafsilotlar</h3>
+        <button class="sheet-close-btn" id="btnCloseDetails" aria-label="Yopish">✕</button>
+      </div>
+      <div class="sheet-body" id="detailBody">
+        <!-- Dynamic Content Injected by JS -->
+      </div>
+    </div>
+  </dialog>
+
+  <!-- 3. CV / Rezyume Preview Modal -->
+  <dialog id="cvDialog" class="modal-dialog cv-modal" closedby="any" aria-labelledby="cvTitle">
+    <div class="sheet-container cv-container">
+      <div class="sheet-drag-handle"></div>
+      <div class="sheet-header">
+        <h3 id="cvTitle" class="sheet-title">Maftuna Turdiqulova • Rezyume (CV)</h3>
+        <button class="sheet-close-btn" id="btnCloseCV" aria-label="Yopish">✕</button>
+      </div>
+      <div class="sheet-body cv-printable-area" id="cvPrintArea">
+        <!-- Modern Printable Curriculum Vitae -->
+        <div class="cv-document">
+          <div class="cv-header">
+            <img src="assets/profile.png" alt="Maftuna" class="cv-photo">
+            <div class="cv-titles">
+              <h2>Turdiqulova Maftuna Laziz qizi</h2>
+              <p class="cv-role">Tarixchi-tadqiqotchi • Mental Arifmetika Treneri</p>
+              <div class="cv-contacts-mini">
+                <span>📍 Jizzax shahri</span> • <span>🎓 JDPU Tarix 3-bosqich</span> • <span>🌐 B2 Ingliz tili</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="cv-section">
+            <h4 class="cv-sec-title">Tarjimayi hol</h4>
+            <p>2006-yil 1-iyunda Jizzax viloyati Jizzax shahrida tug‘ilgan. Hozirda Jizzax davlat pedagogika universiteti Tarix fakultetining 3-bosqich talabasi.</p>
+          </div>
+
+          <div class="cv-section">
+            <h4 class="cv-sec-title">Ilmiy nashrlar va mualliflik ishlari</h4>
+            <ul>
+              <li><strong>“Amir Temur va Temuriylar davri yozma manbalari”</strong> nomli uslubiy qo‘llanma muallifi (2026-yil).</li>
+              <li>Bir necha nufuzli ilmiy jurnallarda chop etilgan maqolalar muallifi.</li>
+            </ul>
+          </div>
+
+          <div class="cv-section">
+            <h4 class="cv-sec-title">Xalqaro va Respublika yutuqlari</h4>
+            <ul>
+              <li><strong>Ispaniya:</strong> “EL AUGE DEL DESARROLLO DE LA CIENCIA Y LA CREATIVIDAD” onlayn xalqaro tanlovi — 2-darajali diplom 🥈</li>
+              <li><strong>Rossiya:</strong> “Корабль Знаний” xalqaro tanlovi — 1-darajali diplom 🥇</li>
+              <li><strong>Respublika ochiq olimpiadalari (2025–2026):</strong> “Eng iqtidorli va namunali trener” nominatsiyasi 🏆</li>
+              <li><strong>Respublika ochiq olimpiadalari (2025–2026):</strong> “Eng iqtidorli va fidoyi ustoz” nominatsiyasi 🌟</li>
+            </ul>
+          </div>
+
+          <div class="cv-section">
+            <h4 class="cv-sec-title">Sertifikatlar va malaka</h4>
+            <ul>
+              <li>Ingliz tili bilish darajasini tasdiqlovchi xalqaro B2 sertifikati.</li>
+              <li>“Ziyo Sam Academy” — Mental Arifmetika maxsus trening kurslari sertifikati.</li>
+              <li>“Teamit Academy” — Kompyuter savodxonligi maxsus sertifikati.</li>
+            </ul>
+          </div>
+
+          <div class="cv-section">
+            <h4 class="cv-sec-title">Murabbiylik va jamoat faoliyati</h4>
+            <p>Bir necha yildan buyon Mental Arifmetika bo‘yicha ko‘plab shogirdlarga saboq berib kelmoqda. Universitet kitobxonlik musobaqalari va ilmiy anjumanlar faol ishtirokchisi.</p>
+          </div>
+        </div>
+      </div>
+      <div class="cv-footer-actions">
+        <button class="btn-print-cv" id="btnPrintCV">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+          <span>Chop etish / PDF saqlash</span>
+        </button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- 4. QR Code Modal for Phone Preview -->
+  <dialog id="qrDialog" class="modal-dialog qr-modal" closedby="any" aria-labelledby="qrTitle">
+    <div class="sheet-container qr-container">
+      <div class="sheet-drag-handle"></div>
+      <div class="sheet-header">
+        <h3 id="qrTitle" class="sheet-title">Telefonda ochish</h3>
+        <button class="sheet-close-btn" id="btnCloseQR" aria-label="Yopish">✕</button>
+      </div>
+      <div class="sheet-body qr-body">
+        <p class="qr-desc">Telefoningiz kamerasini ushbu QR kodga qarating va portfolioni haqiqiy smartfonda oching:</p>
+        <div class="qr-canvas-box" id="qrCanvasBox">
+          <svg class="qr-svg" viewBox="0 0 200 200" width="180" height="180">
+            <!-- Stylized QR Code SVG Pattern -->
+            <rect width="200" height="200" fill="#ffffff" rx="12"/>
+            <!-- Corner 1 -->
+            <rect x="20" y="20" width="50" height="50" fill="#0b0f19" rx="6"/>
+            <rect x="28" y="28" width="34" height="34" fill="#ffffff" rx="3"/>
+            <rect x="34" y="34" width="22" height="22" fill="#10b981" rx="2"/>
+            <!-- Corner 2 -->
+            <rect x="130" y="20" width="50" height="50" fill="#0b0f19" rx="6"/>
+            <rect x="138" y="28" width="34" height="34" fill="#ffffff" rx="3"/>
+            <rect x="144" y="34" width="22" height="22" fill="#10b981" rx="2"/>
+            <!-- Corner 3 -->
+            <rect x="20" y="130" width="50" height="50" fill="#0b0f19" rx="6"/>
+            <rect x="28" y="138" width="34" height="34" fill="#ffffff" rx="3"/>
+            <rect x="34" y="144" width="22" height="22" fill="#10b981" rx="2"/>
+            <!-- Stylized Matrix Data Pixels -->
+            <rect x="85" y="25" width="12" height="12" fill="#0b0f19"/>
+            <rect x="105" y="25" width="12" height="12" fill="#0b0f19"/>
+            <rect x="85" y="45" width="25" height="12" fill="#0b0f19"/>
+            <rect x="25" y="85" width="20" height="12" fill="#0b0f19"/>
+            <rect x="55" y="85" width="15" height="15" fill="#0b0f19"/>
+            <rect x="85" y="85" width="30" height="30" fill="#10b981" rx="4"/>
+            <rect x="130" y="85" width="15" height="15" fill="#0b0f19"/>
+            <rect x="155" y="85" width="20" height="15" fill="#0b0f19"/>
+            <rect x="25" y="110" width="12" height="12" fill="#0b0f19"/>
+            <rect x="85" y="130" width="15" height="25" fill="#0b0f19"/>
+            <rect x="110" y="130" width="25" height="15" fill="#0b0f19"/>
+            <rect x="145" y="130" width="15" height="15" fill="#0b0f19"/>
+            <rect x="170" y="130" width="12" height="30" fill="#0b0f19"/>
+            <rect x="110" y="155" width="15" height="25" fill="#0b0f19"/>
+            <rect x="135" y="155" width="25" height="20" fill="#0b0f19"/>
+            <circle cx="100" cy="100" r="8" fill="#ffffff"/>
+            <circle cx="100" cy="100" r="5" fill="#f59e0b"/>
+          </svg>
+        </div>
+        <div class="qr-link-copy">
+          <input type="text" readonly id="shareUrlInput" value="" class="qr-input">
+          <button class="btn-copy-link" id="btnCopyLink">Nusxalash</button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Toast Notification Popup -->
+  <div class="toast-popup" id="toastPopup" role="status" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
